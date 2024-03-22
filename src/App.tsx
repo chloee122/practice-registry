@@ -2,16 +2,17 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./pages/Layout";
 import HomePage from "./pages/Home/HomePage";
 import SearchPage from "./pages/Search/SearchPage";
-import ProductPage from "./pages/Product/ProductPage";
 import searchPageLoader from "./pages/Search/searchPageLoader";
-import {productPageLoader} from "./pages/Product/productPageLoader";
+import { detailPageLoader } from "./pages/Details/detailPageLoader";
+import { homePageLoader } from "./pages/Home/homePageLoader";
+import DetailPage from "./pages/Details/DetailPage";
 
 function App() {
   const routers = createBrowserRouter([
     {
       element: <Layout />,
       children: [
-        { path: "/", element: <HomePage /> },
+        { path: "/", element: <HomePage />, loader: homePageLoader },
         {
           path: "/search",
           element: <SearchPage />,
@@ -19,8 +20,8 @@ function App() {
         },
         {
           path: "/product/:name",
-          element: <ProductPage />,
-          loader: productPageLoader,
+          element: <DetailPage />,
+          loader: detailPageLoader,
         },
       ],
     },

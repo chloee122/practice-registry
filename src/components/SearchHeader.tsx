@@ -16,7 +16,7 @@ function SearchHeader() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>NPM registry</p>
+      <h2>NPM registry</h2>
       <input value={searchTerm} onChange={handleChange} />
     </form>
   );

@@ -1,8 +1,8 @@
 import { useLoaderData } from "react-router-dom";
-import { productPageLoaderResult } from "./productPageLoader";
+import { detailPageLoaderResult } from "./detailPageLoader";
 
-function ProductPage() {
-  const { packageDetails } = useLoaderData() as productPageLoaderResult;
+function DetailPage() {
+  const { packageDetails } = useLoaderData() as detailPageLoaderResult;
   return (
     <div>
       <div>
@@ -32,4 +32,4 @@ function ProductPage() {
   );
 }
 
-export default ProductPage;
+export default DetailPage;
