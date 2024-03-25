@@ -1,36 +1,34 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./pages/Layout";
-import HomePage from "./pages/Home/HomePage";
-import SearchPage from "./pages/Search/SearchPage";
-import searchPageLoader from "./pages/Search/searchPageLoader";
-import { detailPageLoader } from "./pages/Details/detailPageLoader";
-import { homePageLoader } from "./pages/Home/homePageLoader";
-import DetailPage from "./pages/Details/DetailPage";
+import HomePage from "./pages/home/HomePage";
+import SearchPage from "./pages/search/SearchPage";
+import searchLoader from "./pages/search/searchLoader";
+import { detailLoader } from "./pages/detail/detailLoader";
+import { homePageLoader } from "./pages/home/homeLoader";
+import DetailPage from "./pages/detail/DetailPage";
+
+const routers = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { index: true, element: <HomePage />, loader: homePageLoader },
+      {
+        path: "/search",
+        element: <SearchPage />,
+        loader: searchLoader,
+      },
+      {
+        path: "/product/:name",
+        element: <DetailPage />,
+        loader: detailLoader,
+      },
+    ],
+  },
+]);
 
 function App() {
-  const routers = createBrowserRouter([
-    {
-      element: <Layout />,
-      children: [
-        { path: "/", element: <HomePage />, loader: homePageLoader },
-        {
-          path: "/search",
-          element: <SearchPage />,
-          loader: searchPageLoader,
-        },
-        {
-          path: "/product/:name",
-          element: <DetailPage />,
-          loader: detailPageLoader,
-        },
-      ],
-    },
-  ]);
-  return (
-    <div>
-      <RouterProvider router={routers} />
-    </div>
-  );
+  return <RouterProvider router={routers} />;
 }
 
 export default App;

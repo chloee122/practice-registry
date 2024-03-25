@@ -1,4 +1,4 @@
-export interface PackageDetailsType{
+export interface PackageDetails{
     name: string,
     description: string,
     maintainers: {
