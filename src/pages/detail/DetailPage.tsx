@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { detailLoaderResult } from "./detailLoader";
+import type { detailLoaderResult } from "./detailLoader";
 
 function DetailPage() {
   const { details } = useLoaderData() as detailLoaderResult;

@@ -1,6 +1,6 @@
 import { Params } from "react-router-dom"
 import { getPackage } from "../../api/queries/api"
-import { PackageDetails } from "../../api/types/PackageDetails"
+import type { PackageDetails } from "../../api/types/PackageDetails"
 
 export interface detailLoaderResult {
     details: PackageDetails

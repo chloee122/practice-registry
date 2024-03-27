@@ -1,5 +1,5 @@
 import { getFeaturedPackages } from "../../api/queries/api"
-import { PackageDetails } from "../../api/types/PackageDetails"
+import type { PackageDetails } from "../../api/types/PackageDetails"
 
 export interface homeLoaderResults {
     featuredPackages: PackageDetails[]

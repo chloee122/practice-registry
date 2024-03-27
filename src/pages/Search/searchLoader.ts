@@ -1,4 +1,4 @@
-import { PackageSummary } from "../../api/types/PackageSummary";
+import type { PackageSummary } from "../../api/types/PackageSummary";
 import { searchPackages } from "../../api/queries/api";
 
 export interface searchLoaderResult{

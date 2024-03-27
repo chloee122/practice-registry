@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import PackageListItem from "../../components/PackageListItem";
-import { searchLoaderResult } from "./searchLoader";
+import type { searchLoaderResult } from "./searchLoader";
 
 function SearchPage() {
   const { searchResults } = useLoaderData() as searchLoaderResult;
